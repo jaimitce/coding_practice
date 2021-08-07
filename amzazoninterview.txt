@@ -1,0 +1,7 @@
+Amazon questions.
+
+1.> Find sortest path in 2-d matrix start from 0,0 and reach to thaat localtion (i,j) == 9. You can move to down and right.
+--> Hint: When we need to find shortes path and distance between 2 neighbour node (i.e node in graph or (i,j) to (i+1,j) or (i,j+1) anything) is 		  euqal to 1.
+          Then use "BFS".
+      --> We only use Dijskatra shortest path when distance between 2 neightbour node is not always 1.
+ (BFS-> We use queue in BFS mostly. We can also use priority queue if we have some key as min or max.)
