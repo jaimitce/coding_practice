@@ -1,0 +1,220 @@
+1.>Reverse the linked list.
+
+void reverselist(Node** head)
+{
+    // Initialize prev and current pointers
+    Node *prev = NULL, *curr = *head, *next;
+ 
+    while (curr) {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+ 
+    *head = prev;
+}
+
+---------------------------------------------------------------------
+
+2.>left view of binary tree without printing leaf node.
+
+void printLeftView(Node* node)
+{
+	if(node==nullptr) return;
+	
+	if(node->left){
+		cout << node->data << endl;
+		printLeftView(node->left);
+	}
+	else if(node->right){
+		cout << node->data << endl;
+		printLeftView(node->left);
+	}
+}
+
+void main()
+{
+	Node* root;
+	if(root)
+	{	
+		cout << root->data << endl;
+		if(root->left)
+			printLeftView(root->left);
+		else
+			printLeftView(root->right);
+	}	
+}
+
+Twist-> If we want traverse from leaf to top then,
+
+void printLeftView(Node* node)
+{
+	if(node==nullptr) return;
+	
+	if(node->left){
+		printLeftView(node->left);
+		cout << node->data << endl; # After traversing, we print. This is the logic.
+	}
+	else if(node->right){		
+		printLeftView(node->left);
+		cout << node->data << endl;
+	}
+}
+
+Note-> For right view, first check node->right and then check node->left.
+
+---------------------------------------------------------------------
+2.>left and right view of binary tree
+
+void printLeftView(Node* node)
+{
+	if(node==nullptr) return;
+	
+	cout << node->data << endl;
+	if(node->left){	
+		printLeftView(node->left);
+	}
+	else if(node->right){
+		printLeftView(node->left);
+	}
+}
+
+void printRightView(Node* node)
+{
+	if(node==nullptr) return;
+	
+	cout << node->data << endl;
+	if(node->right){	
+		printRightView(node->left);
+	}
+	else if(node->left){
+		printRightView(node->left);
+	}
+}
+
+void main()
+{
+	Node* root;
+	if(root)
+	{	
+		cout << root->data << endl;
+		if(root->left)
+			printLeftView(root->left);
+		else
+			printLeftView(root->right);
+	}	
+}
+
+void main()
+{
+	Node* root;
+	if(root)
+	{	
+		cout << root->data << endl;
+		if(root->right)
+			printRightView(root->right);
+		else
+			printRightView(root->left);
+	}	
+}
+
+
+---------------------------------------------------------------------
+3.> Find middle of the linked list (tortoise and hare -> i.e fast and slow pointer)
+
+void printMiddle(class Node *head){
+        struct Node *slow_ptr = head;
+        struct Node *fast_ptr = head;
+  
+        if (head!=NULL)
+        {
+            while (fast_ptr != NULL && fast_ptr->next != NULL)
+            {
+                fast_ptr = fast_ptr->next->next;
+                slow_ptr = slow_ptr->next;
+            }
+            cout << "The middle element is [" << slow_ptr->data << "]" << endl;
+        }
+    }
+
+
+---------------------------------------------------------------------
+
+4.> Print leaf node of a binary tree.
+
+--> Leaf node has a property that it's left and right both child are null.
+--> Do inorder traversal - left-root-right
+
+void printLeafNode(Node* node){
+	
+	if(node==nullptr) return;
+	
+	printLeafNode(node->left)
+	cout << node->data << endl;
+	printLeafNode(node->right);
+
+}
+
+
+
+
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+
+
+
+
+
+---------------------------------------------------------------------
+
+
+
+
+
+---------------------------------------------------------------------
+
+
+
+
+
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
